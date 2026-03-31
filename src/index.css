@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+:root {
+  --tile-transition: 0.18s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Tile slide animation */
+.tile-enter {
+  animation: tileIn 0.18s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+@keyframes tileIn {
+  from { opacity: 0.6; transform: scale(0.92); }
+  to   { opacity: 1;   transform: scale(1); }
+}
+
+/* Glow pulse for winning state */
+@keyframes winPulse {
+  0%, 100% { box-shadow: 0 0 0px 0px rgba(99,252,178,0.4); }
+  50%       { box-shadow: 0 0 24px 8px rgba(99,252,178,0.7); }
+}
+.win-glow {
+  animation: winPulse 1.4s ease-in-out infinite;
+}
+
+/* Shimmer on solve button */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+.btn-shimmer {
+  background: linear-gradient(90deg, #7c3aed 25%, #a855f7 50%, #7c3aed 75%);
+  background-size: 400px 100%;
+  animation: shimmer 2s linear infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #4b5563; border-radius: 3px; }
+
+/* Leaderboard entry hover */
+.lb-row:hover { background: rgba(255,255,255,0.05); }
+
+/* Solved overlay */
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.solved-overlay {
+  animation: fadeInScale 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+/* Custom Range Slider */
+.hue-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  border-radius: 4px;
+  outline: none;
+}
+.hue-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 6px rgba(0,0,0,0.5);
+  border: 2px solid rgba(0,0,0,0.1);
+}
+
+/* Tooltip animations */
+@keyframes floatUp {
+  0% { opacity: 0; transform: translateY(10px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-float {
+  animation: floatUp 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
