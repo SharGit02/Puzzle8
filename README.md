@@ -129,10 +129,6 @@ A* is the **gold standard** for single-agent pathfinding problems like the 8-puz
 | Styling | Tailwind CSS |
 | AI Algorithm | A* Search |
 | Heuristics | Manhattan Distance, Hamming Distance |
-| Image Tiles | HTML5 Canvas API |
-| Score Storage | Browser localStorage |
-| Celebration | canvas-confetti |
-
 ---
 
 > **In short:** This app uses **A* Search** — a powerful AI algorithm — to find the optimal solution to the 8-puzzle. The choice of **heuristic** (Manhattan vs. Hamming) directly affects how intelligently and quickly the AI solves the puzzle.
